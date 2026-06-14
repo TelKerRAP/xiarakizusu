@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Xiaraki Zusu | Archivo XZ</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    background:#050505;
+    color:#00d9ff;
+    font-family:'Orbitron',sans-serif;
+    overflow-x:hidden;
+}
+
+/* Fondo */
+
+body::before{
+    content:"";
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:
+    radial-gradient(circle at center,
+    rgba(0,217,255,.10),
+    transparent 70%);
+    z-index:-2;
+}
+
+/* Lluvia Digital */
+
+.rain{
+    position:fixed;
+    width:100%;
+    height:100%;
+    pointer-events:none;
+    z-index:-1;
+}
+
+.drop{
+    position:absolute;
+    width:1px;
+    height:120px;
+    background:linear-gradient(
+        transparent,
+        #00d9ff
+    );
+    opacity:.15;
+    animation:fall linear infinite;
+}
+
+@keyframes fall{
+    from{
+        transform:translateY(-150px);
+    }
+
+    to{
+        transform:translateY(120vh);
+    }
+}
+
+/* Header */
+
+header{
+    padding:20px;
+    border-bottom:1px solid #00d9ff33;
+    backdrop-filter:blur(8px);
+}
+
+nav{
+    display:flex;
+    justify-content:center;
+    gap:30px;
+}
+
+nav a{
+    color:#00d9ff;
+    text-decoration:none;
+    transition:.3s;
+}
+
+nav a:hover{
+    text-shadow:0 0 10px #00d9ff;
+}
+
+/* Hero */
+
+.hero h1{
+    font-size:6rem;
+    font-weight:900;
+    letter-spacing:12px;
+    text-transform:uppercase;
+
+    color:#b8dfff;
+
+    position:relative;
+
+    animation:scan 6s linear infinite;
+}
+
+/* Línea de escaneo */
+
+.hero h1::after{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+    left:-100%;
+
+    width:50%;
+    height:100%;
+
+    background:linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,.25),
+        transparent
+    );
+
+    animation:scanner 4s infinite;
+}
+
+@keyframes scanner{
+
+    0%{
+        left:-100%;
+    }
+
+    100%{
+        left:150%;
+    }
+
+}
+
+/* Pequeñas interferencias */
+
+@keyframes scan{
+
+    0%,100%{
+        transform:translateX(0);
+    }
+
+    2%{
+        transform:translateX(-2px);
+    }
+
+    4%{
+        transform:translateX(2px);
+    }
+
+    6%{
+        transform:translateX(0);
+    }
+
+}
+
+.btn{
+    margin-top:40px;
+    padding:15px 40px;
+    border:1px solid #00d9ff;
+    background:transparent;
+    color:#00d9ff;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.btn:hover{
+    background:#00d9ff;
+    color:#000;
+    box-shadow:0 0 30px #00d9ff;
+}
+
+/* Glitch */
+
+.glitch{
+    position:relative;
+}
+
+.glitch::before{
+    content:attr(data-text);
+
+    position:absolute;
+    left:-2px;
+    top:0;
+
+    color:#00ffff;
+
+    overflow:hidden;
+
+    animation:glitch 2s infinite;
+}
+
+@keyframes glitch{
+
+    0%{
+        transform:translate(-2px);
+    }
+
+    50%{
+        transform:translate(2px);
+    }
+
+    100%{
+        transform:translate(-2px);
+    }
+
+}
+
+.glitch{
+    position:relative;
+    display:inline-block;
+}
+
+.glitch::before{
+
+    content:attr(data-text);
+
+    position:absolute;
+
+    left:0;
+    top:0;
+
+    color:rgba(0,255,255,.25);
+
+    transform:translate(-3px,0);
+
+    z-index:-1;
+}
+
+.glitch::after{
+
+    content:attr(data-text);
+
+    position:absolute;
+
+    left:0;
+    top:0;
+
+    color:rgba(255,255,255,.15);
+
+    transform:translate(3px,0);
+
+    z-index:-1;
+}
+
+/* Secciones */
+
+section{
+    padding:100px 10%;
+}
+
+.section-title{
+    font-size:2.5rem;
+    margin-bottom:50px;
+
+    text-shadow:0 0 15px #00d9ff;
+}
+
+/* Terminal */
+
+.terminal{
+
+    background:#000;
+    border:1px solid #00d9ff;
+
+    padding:30px;
+
+    max-width:900px;
+    margin:auto;
+
+    box-shadow:0 0 30px #00d9ff22;
+}
+
+.terminal p{
+    margin-bottom:10px;
+}
+
+/* Cards */
+
+.grid{
+    display:grid;
+    grid-template-columns:
+    repeat(auto-fit,minmax(280px,1fr));
+
+    gap:30px;
+}
+
+.card{
+    background:#111;
+
+    border:1px solid #00d9ff33;
+
+    padding:30px;
+
+    transition:.3s;
+}
+
+.card:hover{
+
+    transform:translateY(-10px);
+
+    border-color:#00d9ff;
+
+    box-shadow:
+    0 0 30px #00d9ff55;
+}
+
+.card h3{
+    margin-bottom:15px;
+}
+
+.card p{
+    color:#aaa;
+    line-height:1.7;
+}
+
+/* Footer */
+
+footer{
+
+    padding:60px;
+
+    text-align:center;
+
+    border-top:1px solid #00d9ff33;
+
+    color:#888;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="rain" id="rain"></div>
+
+<header>
+
+<nav>
+<a href="#archivo">Archivo XZ</a>
+<a href="#artefactos">Artefactos</a>
+<a href="#transmisiones">Transmisiones</a>
+<a href="#lore">Lore</a>
+</nav>
+
+</header>
+
+<center>
+<section class="hero">
+
+<h1 
+class="glitch"
+data-text="XIARAKI ZUSU">
+XIARAKI ZUSU
+</h1>
+
+
+<p>
+
+"La tormenta no destruye la verdad...
+la revela."
+
+</p>
+</center>
+
+</section>
+
+<section id="archivo">
+
+<section id="artefactos">
+
+<h2 class="section-title">
+
+<center>ARTEFACTOS RECUPERADOS</center>
+
+</h2>
+<div class="grid">
+
+<div class="card">
+
+<h3>MT-01</h3>
+
+<p>
+
+Máscaras de Tempestad
+
+</p>
+
+<p>
+
+Evidencia relacionada con las máscaras
+que la sociedad utiliza para ocultar
+su verdadera identidad.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>ER-2098</h3>
+
+<p>
+
+Error 2098
+
+</p>
+
+<p>
+
+Registro de una anomalía detectada
+dentro del Sistema del Silencio.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>XZ-003</h3>
+
+<p>
+
+Rango E
+
+</p>
+
+<p>
+
+Archivo clasificado relacionado con
+el ascenso de quienes fueron
+subestimados.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="transmisiones">
+<h2 class="section-title">
+
+<center>TRANSMISIONES</center>
+
+</h2>
+
+<div class="grid">
+
+<div class="card">
+
+<h3>Máscaras de Tempestad</h3>
+
+<p>
+Transmisión disponible.
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>Fábrica de Silencio</h3>
+
+<p>
+Transmisión disponible.
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>No Hay Logout</h3>
+
+<p>
+Transmisión disponible.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="lore">
+
+<h2 class="section-title">
+
+<center>SISTEMA DEL SILENCIO</center>
+</h2>
+
+<div class="terminal">
+
+<p>
+
+El Sistema del Silencio es una red
+invisible diseñada para mantener
+a la población distraída.
+
+</p>
+
+<br>
+
+<p>
+
+Los Archivos XZ recopilan evidencia
+sobre manipulación, máscaras sociales
+y pensamiento libre.
+
+</p>
+
+</div>
+
+</section>
+
+<footer>
+
+<h3>XIARAKI ZUSU</h3>
+
+<br>
+
+<p>
+
+ARCHIVO XZ · TRANSMISIÓN ACTIVA
+
+</p>
+
+</footer>
+
+<script>
+
+const rain = document.getElementById("rain");
+
+for(let i=0;i<150;i++){
+
+    const drop =
+    document.createElement("div");
+
+    drop.classList.add("drop");
+
+    drop.style.left =
+    Math.random()*100 + "%";
+
+    drop.style.animationDuration =
+    (Math.random()*2+1)+"s";
+
+    drop.style.opacity =
+    Math.random()*0.3;
+
+    rain.appendChild(drop);
+
+}
+
+</script>
+
+</body>
+</html>
