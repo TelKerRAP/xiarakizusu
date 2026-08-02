@@ -1,0 +1,205 @@
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+background:#050505;color:#fff;font-family:Arial,sans-serif;
+background-image:radial-gradient(circle at top,#2b0000,#050505 60%);
+overflow-x:hidden}
+.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:2rem}
+.tag{color:#ccc;margin:1rem 0}
+.cover{width:320px;height:320px;border:none solid #ff1b1b;display:grid;place-items:center;margin:2rem;background:#111}
+.btn{padding:12px 28px;border:1px solid #e60000;color:#fff;text-decoration:none}
+.section{padding:80px 10%;border-top:1px solid #222}
+.tracks li{padding:10px 0;list-style:none;border-bottom:1px solid #222}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
+.card{padding:40px;border:1px solid #333;background:#101010;text-align:center;transition:.3s}
+.card:hover{border-color:#ff1212;transform:translateY(-6px)}
+footer{text-align:center;padding:40px;color:#888}
+.scanlines{position:fixed;inset:0;pointer-events:none;background:repeating-linear-gradient(transparent 0 3px,rgba(255,255,255,.03) 4px)}
+.glitch{position:relative;display:inline-block;font-size:5rem;font-weight:900}
+.glitch::before,.glitch::after{content:attr(data-text);position:absolute;left:0;top:0}
+.glitch::before{left:2px;text-shadow:-3px 0 #00ffff;animation:g1 2s infinite}
+.glitch::after{left:-2px;text-shadow:3px 0 #ff00ff;animation:g2 3s infinite}
+@keyframes g1{0%,100%{clip-path:inset(0 0 90% 0)}50%{clip-path:inset(40% 0 30% 0)}}
+@keyframes g2{0%,100%{clip-path:inset(90% 0 0 0)}50%{clip-path:inset(20% 0 50% 0)}}
+.coming-soon{color:#c084fc;font-size:.75em;font-weight:bold;margin-left:8px}
+
+.cover{
+    width:420px;
+    max-width:90%;
+    margin:0px auto;
+}
+
+.cover img{
+    width:100%;
+    border-radius:15px;
+    border:5px solid rgba(255,255,255,.1);
+    box-shadow:
+        0 0 10px rgba(0, 0, 0, 0.35),
+        0 0 80px rgba(255, 253, 253, 0.15);
+    transition:.5s;
+}
+
+.cover img:hover{
+    transform:translateY(-8px) scale(1.03);
+    box-shadow:
+        0 0 35px #0f0000,
+        0 0 120px rgba(0, 0, 0, 0.45);
+}
+
+/*==================================================
+    NAVBAR | ARCHIVOS XZ
+==================================================*/
+
+nav{
+
+    position:sticky;
+    top:0;
+    z-index:1000;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:18px;
+
+    padding:16px 35px;
+
+    background:rgba(5,5,5,.88);
+
+    backdrop-filter:blur(12px);
+
+    border-bottom:1px solid rgba(0,229,255,.18);
+
+    box-shadow:
+        0 8px 25px rgba(0,0,0,.45);
+
+    overflow:hidden;
+
+}
+
+/* Línea de escaneo */
+
+nav::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+    top:0;
+
+    width:100%;
+    height:2px;
+
+    background:linear-gradient(
+        90deg,
+        transparent,
+        #00e5ff,
+        transparent
+    );
+
+    animation:scanNav 4s linear infinite;
+
+}
+
+@keyframes scanNav{
+
+    from{
+
+        transform:translateX(-100%);
+
+    }
+
+    to{
+
+        transform:translateX(100%);
+
+    }
+
+}
+
+/*========================================*/
+
+nav a{
+
+    position:relative;
+
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+
+    padding:12px 18px;
+
+    color:#d9d9d9;
+
+    text-decoration:none;
+
+    text-transform:uppercase;
+
+    font-family:'Orbitron',sans-serif;
+
+    font-size:13px;
+
+    letter-spacing:2px;
+
+    border:1px solid transparent;
+
+    transition:.35s;
+
+}
+/* Línea inferior */
+
+nav a::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:50%;
+    bottom:5px;
+
+    width:0;
+
+    height:2px;
+
+    background:#00e5ff;
+
+    transform:translateX(-50%);
+
+    transition:.35s;
+
+}
+
+/* Hover */
+
+nav a:hover{
+
+    color:#00e5ff;
+
+    border-color:rgba(0,229,255,.35);
+
+    background:rgba(0,229,255,.05);
+
+    text-shadow:
+        0 0 8px rgba(0,229,255,.6);
+
+}
+
+nav a:hover::after{
+
+    width:70%;
+
+}
+
+/* Enlace activo */
+
+nav a.active{
+
+    color:#00e5ff;
+
+    border-color:#00e5ff;
+
+    background:rgba(0,229,255,.08);
+
+    box-shadow:
+        0 0 18px rgba(0,229,255,.18);
+
+}
