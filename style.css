@@ -145,3 +145,59 @@ clip-path:inset(95% 0 0 0);
     letter-spacing:2px;
     margin-left:10px;
 }
+
+/* Evita desbordamientos */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+/* El sitio siempre ocupará el ancho del dispositivo */
+html,body{
+    width:100%;
+    overflow-x:hidden;
+}
+
+/* Imágenes responsivas */
+img{
+    max-width:100%;
+    height:auto;
+    display:block;
+}
+
+/* Videos responsivos */
+video,
+iframe{
+    max-width:100%;
+    height:auto;
+}
+
+/* Contenedor principal */
+.container{
+    width:100%;
+    max-width:1400px;
+    margin:auto;
+    padding:20px;
+}
+
+/* Adaptar automáticamente para celulares */
+@media (max-width:768px){
+
+    h1{
+        font-size:2rem;
+    }
+
+    h2{
+        font-size:1.5rem;
+    }
+
+    p{
+        font-size:16px;
+    }
+
+    .container{
+        padding:15px;
+    }
+
+}
