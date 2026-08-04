@@ -1,28 +1,3 @@
-/* Línea de escaneo */
-
-nav::before{
-
-    content:"";
-
-    position:absolute;
-
-    left:0;
-    top:0;
-
-    width:100%;
-    height:2px;
-
-    background:linear-gradient(
-        90deg,
-        transparent,
-        #00e5ff,
-        transparent
-    );
-
-    animation:scanNav 4s linear infinite;
-
-}
-
 @keyframes scanNav{
 
     from{
