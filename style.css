@@ -201,3 +201,38 @@ iframe{
     }
 
 }
+
+/*==============================
+    teléfonos sin romper el diseño
+==============================*/
+@media (max-width:768px){
+
+    nav{
+        flex-wrap:wrap;
+        gap:10px;
+        padding:12px;
+    }
+
+    .track{
+        flex-direction:column;
+        align-items:center;
+        text-align:center;
+    }
+
+    .track-cover{
+        width:180px;
+    }
+
+    .track-synopsis{
+        max-width:100%;
+    }
+
+    .section{
+        padding:60px 20px;
+    }
+
+    .cover{
+        width:95%;
+    }
+
+}
