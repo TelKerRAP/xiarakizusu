@@ -890,7 +890,47 @@ for(let i=0;i<150;i++){
 
 }
 
+/*==============================
+    ejor experiencia disponible
+==============================*/
+
+document.addEventListener("DOMContentLoaded",()=>{
+
+    const isMobile=/Android|iPhone|iPad|iPod|Opera Mini|IEMobile|Mobile/i.test(navigator.userAgent);
+
+    const alreadyClosed=localStorage.getItem("desktopSuggestionClosed");
+
+    if(isMobile && !alreadyClosed){
+
+        document.getElementById("desktopSuggestion").style.display="flex";
+
+    }
+
+    document.getElementById("closeDesktopSuggestion").addEventListener("click",()=>{
+
+        document.getElementById("desktopSuggestion").style.display="none";
+
+        localStorage.setItem("desktopSuggestionClosed","true");
+
+    });
+
+});
+
 </script>
 
+<div id="desktopSuggestion" class="desktop-suggestion">
+    <div class="desktop-card">
+        <h3>💻 Mejor experiencia disponible</h3>
+        <p>
+            Este sitio está diseñado principalmente para computadoras.
+            Para disfrutar todos los efectos visuales y la mejor calidad,
+            activa la opción <strong>"Sitio para computadora"</strong> en el menú de tu navegador.
+        </p>
+
+        <button id="closeDesktopSuggestion">
+            Entendido
+        </button>
+    </div>
+</div>
 </body>
 </html>
