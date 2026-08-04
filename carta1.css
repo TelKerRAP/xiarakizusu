@@ -1,0 +1,895 @@
+/*=================================================
+    XIARAKI ZUSU
+    SOCIOS OFICIALES
+=================================================*/
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+
+background:
+radial-gradient(circle at top,#1a0029,#090909 45%,#040404);
+
+font-family:'JetBrains Mono',monospace;
+color:#f2f2f2;
+overflow-x:hidden;
+
+}
+
+/*==============================*/
+
+body::before{
+
+content:"";
+
+position:fixed;
+
+inset:0;
+
+background:
+linear-gradient(rgba(255,255,255,.03) 1px,transparent 1px),
+linear-gradient(90deg,rgba(255,255,255,.03) 1px,transparent 1px);
+
+background-size:40px 40px;
+
+pointer-events:none;
+
+opacity:.25;
+
+}
+
+/*==============================*/
+
+header{
+
+text-align:center;
+
+padding:90px 20px 60px;
+
+}
+
+header h1{
+
+font-family:'Orbitron';
+
+font-size:3.2rem;
+
+letter-spacing:6px;
+
+color:#ffffff;
+
+text-shadow:
+0 0 15px #ff00ff,
+0 0 40px #6d28d9;
+
+}
+
+header p{
+
+margin-top:20px;
+
+color:#b9b9b9;
+
+max-width:850px;
+
+margin-inline:auto;
+
+line-height:1.8;
+
+font-size:.95rem;
+
+}
+
+/*==============================*/
+
+.container{
+
+width:min(1200px,92%);
+
+margin:auto;
+
+padding-bottom:80px;
+
+}
+
+/*==============================*/
+
+.section-title{
+
+font-family:'Orbitron';
+
+margin-bottom:35px;
+
+font-size:1.4rem;
+
+color:#c084fc;
+
+letter-spacing:3px;
+
+}
+
+/*==============================*/
+
+.grid{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+
+gap:28px;
+
+}
+
+/*==============================*/
+
+.partner{
+
+position:relative;
+
+background:rgba(255,255,255,.04);
+
+border:1px solid rgba(192,132,252,.25);
+
+backdrop-filter:blur(10px);
+
+padding:30px;
+
+transition:.35s;
+
+overflow:hidden;
+
+}
+
+.partner:hover{
+
+transform:translateY(-8px);
+
+border-color:#c084fc;
+
+box-shadow:
+
+0 0 25px rgba(192,132,252,.35),
+
+0 0 60px rgba(124,58,237,.20);
+
+}
+
+/* holograma */
+
+.partner::before{
+
+content:"";
+
+position:absolute;
+
+top:-100%;
+
+left:-50%;
+
+width:200%;
+
+height:250%;
+
+background:
+
+linear-gradient(transparent,
+rgba(255,255,255,.08),
+transparent);
+
+transform:rotate(25deg);
+
+transition:1s;
+
+}
+
+.partner:hover::before{
+
+top:100%;
+
+}
+
+.partner h2{
+
+font-family:'Orbitron';
+
+font-size:1.2rem;
+
+margin-bottom:15px;
+
+}
+
+.partner p{
+
+color:#bdbdbd;
+
+line-height:1.7;
+
+font-size:.92rem;
+
+margin-bottom:20px;
+
+}
+
+.partner span{
+
+display:inline-block;
+
+padding:8px 16px;
+
+border:1px solid #7c3aed;
+
+color:#d8b4fe;
+
+font-size:.75rem;
+
+letter-spacing:2px;
+
+text-transform:uppercase;
+
+}
+
+/*==============================*/
+
+.info{
+
+margin-top:70px;
+
+padding:40px;
+
+background:rgba(255,255,255,.03);
+
+border-left:4px solid #c084fc;
+
+line-height:1.9;
+
+}
+
+/*==============================*/
+
+footer{
+
+margin-top:70px;
+
+text-align:center;
+
+color:#777;
+
+padding-bottom:50px;
+
+font-size:.85rem;
+
+letter-spacing:2px;
+
+}
+
+/*==============================*/
+/* GLITCH */
+/*==============================*/
+
+.glitch{
+position:relative;
+display:inline-block;
+}
+
+.glitch::before,
+.glitch::after{
+
+content:attr(data-text);
+
+position:absolute;
+
+top:0;
+left:0;
+
+width:100%;
+height:100%;
+
+overflow:hidden;
+
+}
+
+.glitch::before{
+
+left:2px;
+
+text-shadow:-3px 0 #00ffff;
+
+animation:glitch1 2s infinite linear alternate-reverse;
+
+}
+
+.glitch::after{
+
+left:-2px;
+
+text-shadow:3px 0 #ff00ff;
+
+animation:glitch2 3s infinite linear alternate-reverse;
+
+}
+
+@keyframes glitch1{
+
+0%{clip-path:inset(0 0 95% 0);}
+10%{clip-path:inset(20% 0 60% 0);}
+20%{clip-path:inset(80% 0 5% 0);}
+30%{clip-path:inset(40% 0 40% 0);}
+40%{clip-path:inset(10% 0 70% 0);}
+50%{clip-path:inset(60% 0 10% 0);}
+60%{clip-path:inset(20% 0 50% 0);}
+70%{clip-path:inset(90% 0 2% 0);}
+80%{clip-path:inset(15% 0 65% 0);}
+90%{clip-path:inset(50% 0 20% 0);}
+100%{clip-path:inset(0 0 95% 0);}
+
+}
+
+@keyframes glitch2{
+
+0%{clip-path:inset(95% 0 0 0);}
+10%{clip-path:inset(50% 0 20% 0);}
+20%{clip-path:inset(10% 0 70% 0);}
+30%{clip-path:inset(80% 0 5% 0);}
+40%{clip-path:inset(25% 0 55% 0);}
+50%{clip-path:inset(60% 0 15% 0);}
+60%{clip-path:inset(5% 0 85% 0);}
+70%{clip-path:inset(45% 0 25% 0);}
+80%{clip-path:inset(15% 0 70% 0);}
+90%{clip-path:inset(75% 0 10% 0);}
+100%{clip-path:inset(95% 0 0 0);}
+
+}
+
+.coming-soon{
+color:#c084fc;
+font-size:.7em;
+font-weight:600;
+text-transform:uppercase;
+letter-spacing:2px;
+margin-left:10px;
+}
+/*==================================================
+    NAVBAR | ARCHIVOS XZ
+==================================================*/
+
+nav{
+
+    position:sticky;
+    top:0;
+    z-index:1000;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:18px;
+
+    padding:16px 35px;
+
+    background:rgba(5,5,5,.88);
+
+    backdrop-filter:blur(12px);
+
+    border-bottom:1px solid rgba(0,229,255,.18);
+
+    box-shadow:
+        0 8px 25px rgba(0,0,0,.45);
+
+    overflow:hidden;
+
+}
+
+/* Línea de escaneo */
+
+nav::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+    top:0;
+
+    width:100%;
+    height:2px;
+
+    background:linear-gradient(
+        90deg,
+        transparent,
+        #00e5ff,
+        transparent
+    );
+
+    animation:scanNav 4s linear infinite;
+
+}
+
+@keyframes scanNav{
+
+    from{
+
+        transform:translateX(-100%);
+
+    }
+
+    to{
+
+        transform:translateX(100%);
+
+    }
+
+}
+
+/*========================================*/
+
+nav a{
+
+    position:relative;
+
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+
+    padding:12px 18px;
+
+    color:#d9d9d9;
+
+    text-decoration:none;
+
+    text-transform:uppercase;
+
+    font-family:'Orbitron',sans-serif;
+
+    font-size:13px;
+
+    letter-spacing:2px;
+
+    border:1px solid transparent;
+
+    transition:.35s;
+
+}
+
+/* Línea inferior */
+
+nav a::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:50%;
+    bottom:5px;
+
+    width:0;
+
+    height:2px;
+
+    background:#00e5ff;
+
+    transform:translateX(-50%);
+
+    transition:.35s;
+
+}
+
+/* Hover */
+
+nav a:hover{
+
+    color:#00e5ff;
+
+    border-color:rgba(0,229,255,.35);
+
+    background:rgba(0,229,255,.05);
+
+    text-shadow:
+        0 0 8px rgba(0,229,255,.6);
+
+}
+
+nav a:hover::after{
+
+    width:70%;
+
+}
+
+/* Enlace activo */
+
+nav a.active{
+
+    color:#00e5ff;
+
+    border-color:#00e5ff;
+
+    background:rgba(0,229,255,.08);
+
+    box-shadow:
+        0 0 18px rgba(0,229,255,.18);
+
+}
+
+/*==========================
+        RESPONSIVE
+==========================*/
+
+@media(max-width:768px){
+
+    nav{
+
+        gap:8px;
+
+        padding:12px;
+
+        flex-wrap:wrap;
+
+    }
+
+    nav a{
+
+        padding:10px 14px;
+
+        font-size:11px;
+
+        letter-spacing:1px;
+
+    }
+
+}
+
+
+
+/*==================================================
+    CARTA DE PRESENTACIÓN
+==================================================*/
+
+.presentacion{
+
+    display:flex;
+    justify-content:center;
+    padding:50px 20px;
+
+}
+
+.carta-link{
+
+    display:block;
+
+    text-decoration:none;
+
+    color:inherit;
+
+}
+
+/*==========================
+        MARCO
+==========================*/
+
+.carta-marco{
+
+    position:relative;
+
+    width:100%;
+    max-width:680px;
+
+    padding:6px;
+
+    background:linear-gradient(
+        135deg,
+        #00e5ff,
+        #4d4d4d,
+        #ff2bd6
+    );
+
+    border-radius:8px;
+
+    box-shadow:
+        0 0 30px rgba(0,229,255,.15),
+        0 0 55px rgba(255,43,214,.08);
+
+    transition:
+        transform .35s ease,
+        box-shadow .35s ease;
+
+}
+
+.carta-marco:hover{
+
+    transform:translateY(-6px);
+
+    box-shadow:
+        0 0 45px rgba(0,229,255,.30),
+        0 0 70px rgba(255,43,214,.15);
+
+}
+
+/*==========================
+        CARTA
+==========================*/
+
+.carta{
+
+    position:relative;
+
+    background:#090909;
+
+    padding:35px 40px;
+
+    border:1px solid rgba(255,255,255,.08);
+
+    overflow:hidden;
+
+}
+
+/*--------------------------------
+    Escaneo
+--------------------------------*/
+
+.carta::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+
+    repeating-linear-gradient(
+
+        transparent 0px,
+        transparent 3px,
+        rgba(255,255,255,.018) 4px
+
+    );
+
+    pointer-events:none;
+
+}
+
+/*--------------------------------
+    Esquinas
+--------------------------------*/
+
+.carta::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    pointer-events:none;
+
+    background:
+
+    linear-gradient(#00e5ff,#00e5ff) left 18px top 18px/35px 2px no-repeat,
+    linear-gradient(#00e5ff,#00e5ff) left 18px top 18px/2px 35px no-repeat,
+
+    linear-gradient(#00e5ff,#00e5ff) right 18px top 18px/35px 2px no-repeat,
+    linear-gradient(#00e5ff,#00e5ff) right 18px top 18px/2px 35px no-repeat,
+
+    linear-gradient(#00e5ff,#00e5ff) left 18px bottom 18px/35px 2px no-repeat,
+    linear-gradient(#00e5ff,#00e5ff) left 18px bottom 18px/2px 35px no-repeat,
+
+    linear-gradient(#00e5ff,#00e5ff) right 18px bottom 18px/35px 2px no-repeat,
+    linear-gradient(#00e5ff,#00e5ff) right 18px bottom 18px/2px 35px no-repeat;
+
+    opacity:.7;
+
+}
+
+/*==========================*/
+
+.codigo{
+
+    display:block;
+
+    color:#777;
+
+    font-size:11px;
+
+    letter-spacing:3px;
+
+    margin-bottom:10px;
+
+}
+
+.carta h2{
+
+    color:#00e5ff;
+
+    font-size:30px;
+
+    letter-spacing:4px;
+
+    text-transform:uppercase;
+
+    margin-bottom:15px;
+
+    text-shadow:
+
+    0 0 10px rgba(0,229,255,.35);
+
+}
+
+.separador{
+
+    width:100%;
+
+    height:1px;
+
+    background:linear-gradient(
+
+        to right,
+
+        transparent,
+
+        #00e5ff,
+
+        transparent
+
+    );
+
+    margin-bottom:20px;
+
+}
+
+.estado{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    flex-wrap:wrap;
+
+    gap:10px;
+
+    margin-bottom:20px;
+
+}
+
+.estado span{
+
+    color:#bdbdbd;
+
+    letter-spacing:3px;
+
+    font-size:13px;
+
+}
+
+.badge{
+
+    padding:6px 14px;
+
+    border:1px solid #00ff88;
+
+    background:rgba(0,255,136,.08);
+
+    color:#00ff88;
+
+    font-size:13px;
+
+    letter-spacing:2px;
+
+    box-shadow:
+
+    0 0 10px rgba(0,255,136,.12);
+
+}
+
+.carta p{
+
+    color:#d8d8d8;
+
+    line-height:1.7;
+
+    text-align:justify;
+
+    font-size:14px;
+
+}
+
+.carta strong{
+
+    color:#ff2bd6;
+
+}
+
+.firma{
+
+    margin-top:35px;
+
+    padding-top:18px;
+
+    border-top:1px solid rgba(255,255,255,.08);
+
+    text-align:right;
+
+}
+
+.firma span{
+
+    display:block;
+
+    color:#00e5ff;
+
+    font-size:18px;
+
+    letter-spacing:4px;
+
+}
+
+.firma small{
+
+    color:#777;
+
+    font-size:11px;
+
+    letter-spacing:2px;
+
+    text-transform:uppercase;
+
+}
+
+/*==========================
+        RESPONSIVE
+==========================*/
+
+@media(max-width:768px){
+
+    .presentacion{
+
+        padding:35px 15px;
+
+    }
+
+    .carta{
+
+        padding:28px;
+
+    }
+
+    .carta h2{
+
+        font-size:24px;
+
+        letter-spacing:3px;
+
+    }
+
+    .estado{
+
+        flex-direction:column;
+
+        align-items:flex-start;
+
+    }
+
+    .firma{
+
+        text-align:left;
+
+    }
+
+}
+
+.presentacion{
+
+    display:flex;
+    justify-content:flex-start;
+    padding:10px 20px;
+
+}
+
+.carta-marco{
+
+    margin-left:20px;
+
+}
