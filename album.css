@@ -204,19 +204,6 @@ nav a.active{
 
 }
 
-.track {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-.track img {
-  width: 56px;
-  height: 56px;
-  object-fit: cover;
-  border-radius: 6px;
-}
-
 .track-info {
   display: flex;
   flex-direction: column;
@@ -252,21 +239,6 @@ nav a.active{
     color:#ff4040;
     font-size:.85rem;
     font-weight:bold;
-}
-
-.track-synopsis{
-    margin-top:8px;
-    color:#bdbdbd;
-    font-size:.9rem;
-    line-height:1.6;
-    max-width:650px;
-}
-
-.track{
-    display:flex;
-    align-items:flex-start;
-    gap:20px;
-    margin:25px 0;
 }
 
 /* Portada */
