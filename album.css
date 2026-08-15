@@ -418,3 +418,14 @@ footer{
     }
 
 }
+
+/* No se sale el Video (Chrome, Edge, Opera, Safari) */
+.track-video {
+    width: 100%;
+    max-width: 650px;
+    height: auto;
+    display: block;
+    margin: 20px auto;
+    border-radius: 15px;
+    object-fit: contain;
+}
