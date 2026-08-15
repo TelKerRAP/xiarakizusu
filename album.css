@@ -418,6 +418,163 @@ footer{
     }
 
 }
+/*==============================
+    Reproductor de Video
+==============================*/
+.track-preview{
+
+    margin-top:18px;
+
+}
+
+.track-preview h4{
+
+    margin-bottom:12px;
+
+    color:#ff4b4b;
+
+    font-size:.95rem;
+
+    letter-spacing:1px;
+
+}
+
+.track-video{
+
+    width:100%;
+    max-width:560px;
+
+    border-radius:12px;
+
+    border:2px solid rgba(255,255,255,.08);
+
+    box-shadow:
+        0 12px 30px rgba(0,0,0,.6);
+
+    background:#000;
+
+}
+
+.preview-card{
+
+    margin-top:25px;
+
+    padding:20px;
+
+    border-radius:18px;
+
+    background:linear-gradient(
+        180deg,
+        rgba(20,20,20,.96),
+        rgba(8,8,8,.96)
+    );
+
+    border:1px solid rgba(255,0,0,.12);
+
+    box-shadow:
+        0 20px 60px rgba(0,0,0,.65),
+        inset 0 0 0 1px rgba(255,255,255,.03);
+
+}
+
+.preview-header{
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    margin-bottom:16px;
+
+}
+
+.preview-label{
+
+    display:block;
+
+    color:#ff4444;
+
+    font-size:.8rem;
+
+    letter-spacing:2px;
+
+    font-weight:bold;
+
+}
+
+.preview-header small{
+
+    color:#8d8d8d;
+
+}
+
+.preview-time{
+
+    color:#bfbfbf;
+
+    font-size:.8rem;
+
+}
+
+.track-video{
+
+    width:100%;
+
+    border-radius:14px;
+
+    overflow:hidden;
+
+    background:#000;
+
+    border:1px solid rgba(255,255,255,.05);
+
+    box-shadow:
+
+        0 20px 45px rgba(0,0,0,.65),
+
+        0 0 25px rgba(255,0,0,.10);
+
+    transition:.35s;
+
+}
+
+.track-video:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:
+
+        0 25px 60px rgba(0,0,0,.8),
+
+        0 0 35px rgba(255,0,0,.20);
+
+}
+
+/* Personaliza los controles (Chrome, Edge, Opera, Safari) */
+
+.track-video::-webkit-media-controls-panel{
+
+    background:#101010;
+
+}
+
+.track-video::-webkit-media-controls-play-button{
+
+    filter:brightness(1.25);
+
+}
+
+.track-video::-webkit-media-controls-current-time-display,
+.track-video::-webkit-media-controls-time-remaining-display{
+
+    color:#fff;
+
+}
+
+.track-video::-webkit-media-controls-timeline{
+
+    filter:hue-rotate(-15deg) saturate(1.6);
+
+}
 
 /* No se sale el Video (Chrome, Edge, Opera, Safari) */
 .track-video {
